@@ -6,3 +6,10 @@
   background-color: rgb(192, 192, 192);
 }
 
+.chart-disc canvas {
+  height:430px!important;
+  margin:0 auto;
+  text-align:center;
+  position:relative;
+}
+
