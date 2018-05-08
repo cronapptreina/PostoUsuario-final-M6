@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CarrosUsuario" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="e079b966-7a9f-455c-8377-690ac2d0e06b">
+	<property name="zoom.factor" value="50.0"/>
+	<property name="DATASOURCE" value="jdbc/main"/>
+	<property name="REPORT_DATASET" value="[{&quot;name&quot;:&quot;CARROS&quot;,&quot;j4CDataset&quot;:{&quot;datasetType&quot;:&quot;DATASOURCE&quot;,&quot;freeQuery&quot;:false,&quot;jndiConnection&quot;:&quot;jdbc/main&quot;,&quot;recordLimit&quot;:10,&quot;tables&quot;:[{&quot;name&quot;:&quot;CARRO&quot;}],&quot;joins&quot;:[{&quot;right&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;CARRO&quot;},&quot;name&quot;:&quot;fk_user&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},&quot;operator&quot;:&quot;EQUALS&quot;,&quot;left&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;id&quot;}}],&quot;columns&quot;:[{&quot;parent&quot;:{&quot;name&quot;:&quot;CARRO&quot;},&quot;name&quot;:&quot;placa&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;CARRO&quot;},&quot;name&quot;:&quot;ano&quot;,&quot;type&quot;:&quot;INTEGER&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;VARCHAR&quot;}],&quot;wheres&quot;:[],&quot;persistenceUnitName&quot;:&quot;app&quot;},&quot;main&quot;:true}]"/>
+	<parameter name="image_ublu5wp31gme0" class="java.lang.String">
+		<defaultValueExpression><![CDATA["reports/images/logo-cronapp.png"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sub_1h81zu23cjtx10" class="java.lang.String">
+		<defaultValueExpression><![CDATA["reports/sub-reports/gastocarro.jrxml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sub_1hv602ijqz7zm1" class="java.lang.String">
+		<defaultValueExpression><![CDATA["reports/sub-reports/GraficoBarra.jrxml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sub_s505kz4772uo2" class="java.lang.String">
+		<defaultValueExpression><![CDATA["reports/sub-reports/GrafPizza.jrxml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sub_t4q62e996g6b3" class="java.lang.String">
+		<defaultValueExpression><![CDATA["reports/sub-reports/GrafPizza.jrxml"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    "CARRO".placa ,
+    "CARRO".ano ,
+    "USER".email 
+FROM
+    "CARRO" ,
+    "USER" 
+WHERE
+    "USER".id = "CARRO".fk_user]]>
+	</queryString>
+	<field name="ano" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ano]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<fieldDescription><![CDATA[placa]]></fieldDescription>
+	</field>
+	<title>
+		<band height="53">
+			<image>
+				<reportElement mode="Transparent" x="0" y="0" width="109" height="47" forecolor="#000000" backcolor="#FFFFFF" uuid="d0d20265-359c-46d5-9426-f5d19f0c2d60"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{image_ublu5wp31gme0}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="117" y="11" width="408" height="27" forecolor="#2F3699" backcolor="#FFFFFF" uuid="7c1688ce-a9ea-47e3-a686-fb9159a77113"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#2F3699"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#2F3699"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#2F3699"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#2F3699"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Usuários, Carros e Abastecimentos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<rectangle radius="0">
+				<reportElement mode="Opaque" x="0" y="0" width="527" height="21" forecolor="#000000" backcolor="#99D9EA" uuid="ce415038-07e9-4918-a734-95fb76087b1f"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="127" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="785b7445-0cb2-4ddd-80ef-aa5c12b702b4"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="15" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="266" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="2db12bd2-76d4-4b74-88f5-2980fd559587"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="15" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Ano]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d4088bb4-0b0e-41ef-915e-8dd55a522948"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="15" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Usuário]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Prevent">
+			<textField>
+				<reportElement mode="Transparent" x="127" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="0c3a25c7-0c32-45ea-85b0-d793aa5239b4"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="266" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="754cb67c-d981-410f-84ae-2f7024974932"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ano}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement mode="Transparent" x="367" y="0" width="202" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="5666048c-54a1-46d2-940d-20e350385e35"/>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportParameter name="PLACA">
+					<subreportParameterExpression><![CDATA[$F{placa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{sub_1h81zu23cjtx10}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="0a1977c1-e3a4-4911-a512-ecaaddc8115f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="11"/>
+	</pageFooter>
+	<summary>
+		<band height="109">
+			<subreport>
+				<reportElement x="-1" y="-1" width="200" height="50" uuid="1ff62aad-4808-44e9-a098-327416a3d8d2"/>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{sub_t4q62e996g6b3}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

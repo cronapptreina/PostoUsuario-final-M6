@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GrafPizza" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="20" topMargin="5" bottomMargin="30" uuid="2ba73d61-a818-41d1-be3b-bf2742b207af">
+	<property name="zoom.factor" value="50.0"/>
+	<property name="DATASOURCE" value="jdbc/main"/>
+	<property name="REPORT_DATASET" value="[{&quot;name&quot;:&quot;GRAFPIZZA&quot;,&quot;j4CDataset&quot;:{&quot;datasetType&quot;:&quot;DATASOURCE&quot;,&quot;freeQuery&quot;:true,&quot;jndiConnection&quot;:&quot;jdbc/main&quot;,&quot;sql&quot;:&quot;SELECT\n    SUM (\&quot;ABASTECIMENTO\&quot;.valor) ,\n    \&quot;USER\&quot;.email \nFROM\n    \&quot;ABASTECIMENTO\&quot; ,\n    \&quot;USER\&quot; ,\n    \&quot;CARRO\&quot; \nWHERE\n    \&quot;CARRO\&quot;.id \u003d \&quot;ABASTECIMENTO\&quot;.fk_carro AND\n    \&quot;USER\&quot;.id \u003d \&quot;CARRO\&quot;.fk_user \nGROUP BY email\nORDER BY email&quot;,&quot;recordLimit&quot;:10,&quot;tables&quot;:[{&quot;name&quot;:&quot;ABASTECIMENTO&quot;}],&quot;joins&quot;:[{&quot;right&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;ABASTECIMENTO&quot;},&quot;name&quot;:&quot;fk_carro&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},&quot;operator&quot;:&quot;EQUALS&quot;,&quot;left&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;CARRO&quot;},&quot;name&quot;:&quot;id&quot;}},{&quot;right&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;CARRO&quot;},&quot;name&quot;:&quot;fk_user&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},&quot;operator&quot;:&quot;EQUALS&quot;,&quot;left&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;id&quot;}}],&quot;columns&quot;:[{&quot;parent&quot;:{&quot;name&quot;:&quot;ABASTECIMENTO&quot;},&quot;name&quot;:&quot;valor&quot;,&quot;type&quot;:&quot;DOUBLE&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;VARCHAR&quot;}],&quot;wheres&quot;:[],&quot;persistenceUnitName&quot;:&quot;app&quot;},&quot;main&quot;:true}]"/>
+	<queryString>
+		<![CDATA[SELECT
+    SUM ("ABASTECIMENTO".valor) ,
+    "USER".email 
+FROM
+    "ABASTECIMENTO" ,
+    "USER" ,
+    "CARRO" 
+WHERE
+    "CARRO".id = "ABASTECIMENTO".fk_carro AND
+    "USER".id = "CARRO".fk_user 
+GROUP BY email
+ORDER BY email]]>
+	</queryString>
+	<field name="SUM(ABASTECIMENTO.&quot;valor&quot;)" class="java.lang.Double">
+		<fieldDescription><![CDATA[SUM(ABASTECIMENTO."valor")]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<summary>
+		<band height="153">
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="2" width="435" height="138" uuid="2acf0fc3-6c8a-4987-936d-ba3794bc4a4e"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{email}]]></keyExpression>
+					<valueExpression><![CDATA[$F{SUM(ABASTECIMENTO."valor")}]]></valueExpression>
+					<labelExpression><![CDATA[$F{email}.substring(0,$F{email}.indexOf("@"))]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot isShowLabels="true" isCircular="true">
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>

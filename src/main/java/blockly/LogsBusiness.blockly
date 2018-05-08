@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><blockly formTarget="" resourceType="JAVA" ruleDescription="LogsBusiness" ruleName="LogsBusiness" ruleSynchronous="false" ruleTimeout="" ruleType="I">
+  <metadata scale="1" scrollx="356.9999999999999" scrolly="-72.99999999999997" target="Anb:u5+^,0vLkL9QIqn5"/>
+  <block colour="#995ba5" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-350" y="130">
+    <mutation>
+      <arg name="Entidade&lt;app.entity.Logmsg&gt;"/>
+    </mutation>
+    <field name="NAME">onNavigate</field>
+    <comment h="80" pinned="false" w="160">LogsBusiness</comment>
+    <statement name="STACK">
+      <block colour="#404340" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="9g06rUq-)[N[^rR]yv^t" multilayer="false" namespace="cronapi.object.Operations.setObjectField" origintype="procedures_set_field" output="false" returntype="ObjectType.VOID" tooltip="%3Cdiv%20class=%22name%22%3E%3Cstrong%3ENome:%3C/strong%3E%3Cdiv%3EDefine%20valor%20do%3C/div%3E%3C/div%3E%3Cdiv%20class=%22description%22%3E%3Cstrong%3EDescri%C3%A7%C3%A3o:%3C/strong%3E%3Cdiv%3EFun%C3%A7%C3%A3o%20para%20definir%20campo%20do%20objeto%3C/div%3E%3C/div%3E%3Cdiv%20class=%22params%22%3E%3Cstrong%3EParam%C3%AAtro:%3C/strong%3E%3Cdiv%3E%3Cspan%3E%20-%20Objeto%20:%20Objeto%3C/span%3E%3Cbr%3E%3Cspan%3E%20-%20Caminho%20a%20percorrer%20:%20Texto%3C/span%3E%3Cdiv%3E%20Exemplo:%20estado%5B3%5D.uf%3C/div%3E%3Cspan%3E%20-%20Valor%20a%20ser%20definido%20no%20objeto%20:%20Objeto%3C/span%3E%3Cbr%3E%3C/div%3E%3C/div%3E%3Cdiv%20class=%22link%22%3E%3Cstrong%3EAjuda:%3C/strong%3E%3Cdiv%20class=%22tooltip-link%22%3E%3Ca%20target=%22_blank%22%20href=%22https://docs.cronapp.io/display/CRON2/cronapi.object.Operations.setObjectField%22%3Ehttps://docs.cronapp.io/display/CRON2/cronapi.object.Operations.setObjectField%3C/a%3E%3C/div%3E%3C/div%3E" type="procedures_set_field">
+        <mutation name="{{cronapi.object.Operations.setObjectField}}">
+          <arg name="Objeto"/>
+          <arg name="Caminho a percorrer"/>
+          <arg name="Valor a ser definido no objeto"/>
+        </mutation>
+        <value name="PARAM0">
+          <block colour="#a55b80" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="B9N]{yALqNdiu;g`%ll!" origintype="variables_get" output="true" tooltip="Retorna o valor desta variável." type="variables_get">
+            <field name="VAR">Entidade&lt;app.entity.Logmsg&gt;</field>
+          </block>
+        </value>
+        <value name="PARAM1">
+          <block colour="#404340" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="mO1{[*pR.@Uj37q0mN2q" origintype="procedures_get_field_object" output="true" type="procedures_get_field_object">
+            <mutation name=""/>
+            <field name="SELECT">obs_admin</field>
+          </block>
+        </value>
+        <value name="PARAM2">
+          <block colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="uG*7vLG4`py-bdD6g%3/" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+            <field name="TEXT">texto obs</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</blockly>
